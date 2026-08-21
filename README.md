@@ -1,6 +1,6 @@
 # FokusKompis
 
-FokusKompis är en offline-webbapp för korta fokuspass med barn. Appen kombinerar ritning, rörelse, lugna pauser, belöningar, barnprofil och föräldrainställningar i ett enkelt gränssnitt som går att köra direkt i webbläsaren.
+FokusKompis är en liten webapp för korta fokuspass med barn. Den samlar timer, ritning, rörelsepauser, belöningar, barnprofil och föräldrainställningar i en app som kan köras direkt i webbläsaren.
 
 Jag byggde projektet som ett praktiskt portfolio-projekt under min utbildning till utvecklare inom AI och maskininlärning. Målet var att bygga något som går att använda hemma: en trygg, reklamfri app som min dotter kan använda med mitt stöd när hon är rastlös eller behöver landa i ett kort fokuspass.
 
@@ -8,7 +8,7 @@ Jag byggde projektet som ett praktiskt portfolio-projekt under min utbildning ti
 
 Kort repo-beskrivning:
 
-> Offline focus app for children with drawing, movement breaks, local rewards, parent settings and a safe AI exercise-idea prototype.
+> Small browser app for child-friendly focus sessions, built as a student project with drawing, breaks, local progress and a rule-based exercise idea prototype.
 
 Föreslagna topics:
 
@@ -24,7 +24,7 @@ Demo:
 
 Jag ville träna på att bygga något som är användbart i vardagen, inte bara en teknisk demo. FokusKompis är i första hand tänkt för barn som behöver hjälp att komma igång, ta en paus eller byta aktivitet på ett lugnt sätt. Jag som förälder finns med i bakgrunden, till exempel för att starta ett pass, välja längd eller anpassa övningarna.
 
-Projektet passar också mitt AI/ML-spår: nästa steg är att undersöka hur AI kan hjälpa en förälder att skapa nya barnvänliga övningar, utan konton, reklam eller onödig datainsamling.
+Det gör också projektet relevant för min AI/ML-utbildning. Jag har byggt appen runt övningar, lokalt sparad data och ett regelbaserat förslagssystem, så att en riktig AI-funktion skulle kunna kopplas på senare utan att behöva ändra hela appens upplägg.
 
 ## Skärmbilder
 
@@ -34,19 +34,16 @@ Projektet passar också mitt AI/ML-spår: nästa steg är att undersöka hur AI 
 
 ## Funktioner
 
-- Fokuspass med timer, aktivitetssteg och paus.
-- Barnprofil med namn som används i appens texter.
-- Dagens mål med klistermärkesprogress.
-- Tre aktivitetstyper: rita, dansa och lekbana.
-- AI-idéverkstad som skapar trygga övningsförslag lokalt och lägger dem i aktivitetsbanken.
-- Aktivitetsbank som visar övningar och hur ofta varje aktivitet klarats.
-- Märken/achievements för första passet, klistermärken, alla aktiviteter och streak.
-- Teman: djungel, hav och lekland.
-- Talstöd och enkla ljudsignaler via Web Speech API och Web Audio API.
-- Ritcanvas med pointer events.
-- Belöningar, statistik, AI-förslag och streak sparas lokalt i webbläsaren.
-- Föräldraläge med PIN, tidsinställningar, energinivå, rörelseläge, ljud och aktivitetstyper.
-- Körs offline utan reklam, konton eller köp.
+- Timer för korta fokuspass.
+- Rityta där barnet kan rita direkt i appen.
+- Rörelse- och pausaktiviteter som kan varieras.
+- Barnprofil, tema och enkla belöningar.
+- Föräldraläge med PIN, passlängd, ljud och aktivitetstyper.
+- Enkel aktivitetsbank med lokalt sparade övningar.
+- Regelbaserad idéverkstad där en förälder kan skapa nya övningsförslag.
+- Lokal statistik och inställningar via localStorage.
+- Talstöd och ljud via Web Speech API och Web Audio API.
+- Responsiv layout för dator och mobil.
 
 ## Teknik
 
@@ -59,17 +56,16 @@ Projektet passar också mitt AI/ML-spår: nästa steg är att undersöka hur AI 
 - Web Speech API
 - Responsiv design
 
-## AI-spår
+## Koppling till min utbildning
 
-Appen innehåller en lokal AI-idéverkstad i föräldraläget. Den är byggd som en säker produktprototyp: föräldern väljer fokusområde och aktivitetstyp, appen skapar barnvänliga övningsförslag och sparar dem lokalt.
+Efter första året känner jag mig mest hemma i grunderna: Python, databehandling, statistik, databaser och grundläggande maskininlärning. FokusKompis är därför byggd som ett praktiskt sidoprojekt runt en idé, inte som ett avancerat ML-projekt.
 
-I den här versionen är generatorn regelbaserad för att appen ska fungera helt offline. Tanken är att visa hur ett AI-flöde kan designas innan en riktig språkmodell kopplas in:
+AI-delen är med som en skiss på hur ett sådant flöde skulle kunna fungera längre fram. I den här versionen är generatorn regelbaserad, vilket gör appen lättare att testa och förklara. Nästa steg vore att koppla på en språkmodell i föräldraläget och jämföra modellens förslag med de regelbaserade förslagen.
 
 - inga barnkonton
 - ingen extern datadelning
-- korta instruktioner
-- vuxen som godkänner innan övningar används
-- tydlig koppling mellan behov, övning och aktivitetstyp
+- föräldern granskar innan något sparas
+- korta övningar som går att testa i vardagen
 
 ## Kör appen
 
@@ -81,11 +77,11 @@ Föräldraläge: PIN `1234`.
 
 Det här projektet gjorde mig bättre på att bygga färdigt något litet men användbart. Jag fick tänka igenom hela kedjan: starta ett pass, visa rätt aktivitet, pausa, ge en liten belöning och spara enkla inställningar lokalt i webbläsaren.
 
-Kodmässigt fick jag träna på state i ren JavaScript, timerlogik, DOM-uppdateringar, localStorage, Canvas API, Web Audio/Web Speech och responsiv CSS. Jag märkte också att mobilvyn tog mer tid än jag först trodde, eftersom text, knappar och aktivitetsytor snabbt känns trånga när appen ska användas bredvid ett barn.
+Kodmässigt fick jag träna på state i ren JavaScript, timerlogik, DOM-uppdateringar, localStorage, Canvas API, Web Audio/Web Speech och responsiv CSS. Det mest lärorika var att många små beslut påverkar helheten: vad som visas först, vad som händer när ett pass tar slut och hur mycket information som får plats på en mobilskärm.
 
 ## Nästa steg
 
-- Aktivera GitHub Pages så appen går att testa direkt från repot.
 - Testa appen mer hemma och justera texter, passlängd och aktiviteter efter vad som faktiskt fungerar.
 - Bygga en enkel historikvy så man kan se tidigare pass och vilka aktiviteter som används mest.
-- Göra AI-idéverkstaden mer riktig, till exempel genom att koppla den till en språkmodell i föräldraläget och låta föräldern godkänna förslag innan de sparas.
+- Koppla idéverkstaden till en språkmodell i föräldraläget och låta föräldern godkänna förslag innan de sparas.
+- Undersöka hur feedback från genomförda pass kan användas utan att samla in känslig data.
