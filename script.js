@@ -491,16 +491,32 @@ function startActivityPhase() {
   playCue("phase");
 }
 
-function startBreakPhase() {
+function startBreakPhase(options = {}) {
   state.phase = "break";
   state.phaseRemainingSec = settings.breakDurationSec;
   state.rewardClaimed = false;
   resetRewardButton(false);
   clearActiveActivity();
   renderBreak();
-  speak(getTheme().breakText);
-  playCue("break");
+  if (options.announce !== false) speak(getTheme().breakText);
+  if (options.cue !== false) playCue("break");
   updateTimersUi();
+}
+
+function completeActivityAndPause() {
+  if (!state.running || state.phase !== "activity") return;
+
+  const awarded = awardCurrentActivity();
+  const sessionRemaining = Math.max(0, settings.sessionDurationSec - state.elapsedSec);
+
+  if (sessionRemaining <= 1) {
+    endSession(false);
+    return;
+  }
+
+  speak(awarded ? "Bra jobbat. Nu tar vi en paus." : "Nu tar vi en paus.");
+  playCue(awarded ? "reward" : "break");
+  startBreakPhase({ announce: false, cue: false });
 }
 
 function endSession(manualStop) {
@@ -830,8 +846,14 @@ function renderPlayActivity() {
 
   const taskEl = document.getElementById("playTask");
   const nextBtn = document.getElementById("nextPlayStep");
+  let courseDone = false;
 
   nextBtn.addEventListener("click", () => {
+    if (courseDone) {
+      completeActivityAndPause();
+      return;
+    }
+
     idx += 1;
     if (idx < tasks.length) {
       taskEl.textContent = tasks[idx];
@@ -841,16 +863,22 @@ function renderPlayActivity() {
     }
 
     taskEl.textContent = "Fantastiskt. Du klarade hela banan.";
-    nextBtn.disabled = true;
-    speak("Du klarade banan.");
+    nextBtn.textContent = "Ta paus";
+    nextBtn.classList.remove("ghost-btn");
+    nextBtn.classList.add("primary-btn");
+    courseDone = true;
+    speak("Du klarade banan. Nu kan ni ta paus.");
     playCue("reward");
   });
 }
 
 function claimReward() {
   if (!state.running || state.phase !== "activity") return;
-  if (state.rewardClaimed) return;
+  completeActivityAndPause();
+}
 
+function awardCurrentActivity() {
+  if (state.rewardClaimed) return false;
   state.rewardClaimed = true;
   state.sessionStickers += 1;
   if (state.currentActivity && state.sessionActivityCounts[state.currentActivity] !== undefined) {
@@ -860,8 +888,7 @@ function claimReward() {
   renderActivityLibrary();
   renderAchievements();
   syncStatsUi();
-  speak(randomFrom(getTheme().praise));
-  playCue("reward");
+  return true;
 }
 
 function resetRewardButton(active) {
