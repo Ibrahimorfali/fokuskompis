@@ -268,7 +268,7 @@ const AI_IDEA_BANK = {
     ],
     play: [
       "Bygg en osynlig bana och välj själv tre hinder.",
-      "Hitta på en trygg superkraft och visa den med kroppen."
+      "Hitta på en snäll superkraft och visa den med kroppen."
     ]
   }
 };
@@ -1019,7 +1019,7 @@ function previewVoice() {
     settings.voiceName = els.voiceName.value;
   }
   warmSpeechVoices();
-  speak("Hej, jag heter FokusKompis. Nu låter rösten lite mjukare och tryggare.", { force: true });
+  speak("Hej, jag heter FokusKompis. Nu låter rösten lite mjukare och lugnare.", { force: true });
 }
 
 function generateAiIdeas() {

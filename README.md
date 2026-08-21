@@ -1,6 +1,6 @@
 # FokusKompis
 
-FokusKompis är en liten webapp för korta fokuspass med barn. Den samlar timer, ritning, rörelsepauser, belöningar, barnprofil och föräldrainställningar i en app som kan köras direkt i webbläsaren.
+FokusKompis är en liten webbapp för korta fokuspass med barn. Den samlar timer, ritning, rörelsepauser, belöningar, barnprofil och föräldrainställningar i en app som kan köras direkt i webbläsaren.
 
 Jag byggde projektet som ett praktiskt portfolio-projekt under min utbildning till utvecklare inom AI och maskininlärning. Målet var att bygga något jag kan använda hemma med min dotter när hon är rastlös eller behöver komma in i ett kort fokuspass.
 
@@ -62,7 +62,7 @@ Föräldraläge: PIN `1234`.
 
 Det här projektet gjorde mig bättre på att bygga färdigt något litet men användbart. Jag fick tänka igenom hela kedjan: starta ett pass, visa rätt aktivitet, pausa, ge en liten belöning och spara enkla inställningar lokalt i webbläsaren.
 
-Kodmässigt fick jag träna på state i ren JavaScript, timerlogik, DOM-uppdateringar, localStorage, Canvas API, Web Audio/Web Speech och responsiv CSS. Det mest lärorika var att många små beslut påverkar helheten: vad som visas först, vad som händer när ett pass tar slut och hur mycket information som får plats på en mobilskärm.
+Kodmässigt fick jag träna på state i ren JavaScript, timerlogik, DOM-uppdateringar, localStorage, Canvas API, Web Audio API, Web Speech API och responsiv CSS. Det mest lärorika var att många små beslut påverkar helheten: vad som visas först, vad som händer när ett pass tar slut och hur mycket information som får plats på en mobilskärm.
 
 ## Nästa steg
 
