@@ -2,7 +2,7 @@
 
 FokusKompis är en offline-webbapp för korta fokuspass med barn. Appen kombinerar ritning, rörelse, lugna pauser, belöningar, barnprofil och föräldrainställningar i ett enkelt gränssnitt som går att köra direkt i webbläsaren.
 
-Jag byggde projektet som ett praktiskt portfolio-projekt under min utbildning till utvecklare inom AI och maskininlärning. Målet var att bygga något som går att använda hemma: en trygg, reklamfri app som min dotter kan använda tillsammans med en vuxen.
+Jag byggde projektet som ett praktiskt portfolio-projekt under min utbildning till utvecklare inom AI och maskininlärning. Målet var att bygga något som går att använda hemma: en trygg, reklamfri app som min dotter kan använda med mitt stöd när hon är rastlös eller behöver landa i ett kort fokuspass.
 
 ## GitHub-presentation
 
