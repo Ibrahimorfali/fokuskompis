@@ -228,25 +228,31 @@ const THEME_PACKS = {
 
 const SOUND_PATTERNS = {
   jungle: {
-    start: { notes: [329.63, 392.0, 523.25], durationSec: 0.18, gapSec: 0.13, volume: 0.024, waveType: "triangle" },
-    phase: { notes: [392.0, 523.25], durationSec: 0.14, gapSec: 0.11, volume: 0.023, waveType: "triangle" },
-    break: { notes: [392.0, 329.63], durationSec: 0.22, gapSec: 0.2, volume: 0.018, waveType: "sine" },
-    reward: { notes: [329.63, 392.0, 523.25, 659.25], durationSec: 0.16, gapSec: 0.1, volume: 0.032, waveType: "triangle" },
-    ambient: { notes: [329.63, 523.25], durationSec: 0.22, gapSec: 0.46, volume: 0.012, waveType: "sine" }
+    effect: "jungle",
+    start: { notes: [196.0, 246.94, 329.63, 523.25], durationSec: 0.2, gapSec: 0.12, volume: 0.04, waveType: "triangle" },
+    phase: { notes: [196.0, 329.63, 523.25], durationSec: 0.15, gapSec: 0.1, volume: 0.038, waveType: "triangle" },
+    break: { notes: [246.94, 196.0], durationSec: 0.24, gapSec: 0.18, volume: 0.03, waveType: "sine" },
+    reward: { notes: [196.0, 246.94, 329.63, 392.0, 659.25], durationSec: 0.14, gapSec: 0.09, volume: 0.045, waveType: "triangle" },
+    ambient: { notes: [196.0, 523.25], durationSec: 0.2, gapSec: 0.44, volume: 0.018, waveType: "sine" },
+    preview: { notes: [146.83, 196.0, 329.63, 523.25, 659.25], durationSec: 0.15, gapSec: 0.11, volume: 0.05, waveType: "triangle" }
   },
   ocean: {
-    start: { notes: [261.63, 329.63, 392.0], durationSec: 0.24, gapSec: 0.18, volume: 0.02, waveType: "sine" },
-    phase: { notes: [329.63, 392.0], durationSec: 0.2, gapSec: 0.17, volume: 0.018, waveType: "sine" },
-    break: { notes: [392.0, 329.63, 261.63], durationSec: 0.24, gapSec: 0.2, volume: 0.016, waveType: "sine" },
-    reward: { notes: [261.63, 329.63, 392.0, 523.25], durationSec: 0.2, gapSec: 0.14, volume: 0.026, waveType: "sine" },
-    ambient: { notes: [261.63, 392.0], durationSec: 0.28, gapSec: 0.52, volume: 0.01, waveType: "sine" }
+    effect: "ocean",
+    start: { notes: [220.0, 261.63, 329.63, 392.0], durationSec: 0.3, gapSec: 0.2, volume: 0.032, waveType: "sine" },
+    phase: { notes: [261.63, 329.63, 392.0], durationSec: 0.24, gapSec: 0.18, volume: 0.028, waveType: "sine" },
+    break: { notes: [392.0, 329.63, 261.63], durationSec: 0.3, gapSec: 0.22, volume: 0.026, waveType: "sine" },
+    reward: { notes: [261.63, 329.63, 392.0, 523.25], durationSec: 0.24, gapSec: 0.16, volume: 0.038, waveType: "sine" },
+    ambient: { notes: [220.0, 392.0], durationSec: 0.34, gapSec: 0.58, volume: 0.016, waveType: "sine" },
+    preview: { notes: [196.0, 261.63, 329.63, 392.0, 523.25], durationSec: 0.28, gapSec: 0.18, volume: 0.044, waveType: "sine" }
   },
   playland: {
-    start: { notes: [392.0, 523.25, 659.25], durationSec: 0.15, gapSec: 0.09, volume: 0.026, waveType: "square" },
-    phase: { notes: [523.25, 659.25], durationSec: 0.13, gapSec: 0.09, volume: 0.024, waveType: "triangle" },
-    break: { notes: [523.25, 392.0], durationSec: 0.18, gapSec: 0.15, volume: 0.018, waveType: "sine" },
-    reward: { notes: [523.25, 659.25, 783.99, 1046.5], durationSec: 0.13, gapSec: 0.08, volume: 0.03, waveType: "triangle" },
-    ambient: { notes: [392.0, 659.25], durationSec: 0.18, gapSec: 0.4, volume: 0.011, waveType: "triangle" }
+    effect: "playland",
+    start: { notes: [392.0, 523.25, 659.25, 783.99], durationSec: 0.13, gapSec: 0.08, volume: 0.044, waveType: "square" },
+    phase: { notes: [523.25, 659.25, 783.99], durationSec: 0.1, gapSec: 0.07, volume: 0.04, waveType: "triangle" },
+    break: { notes: [523.25, 392.0, 329.63], durationSec: 0.16, gapSec: 0.12, volume: 0.028, waveType: "sine" },
+    reward: { notes: [523.25, 659.25, 783.99, 1046.5, 1318.51], durationSec: 0.11, gapSec: 0.07, volume: 0.048, waveType: "triangle" },
+    ambient: { notes: [392.0, 659.25], durationSec: 0.15, gapSec: 0.34, volume: 0.018, waveType: "triangle" },
+    preview: { notes: [392.0, 523.25, 659.25, 783.99, 1046.5], durationSec: 0.1, gapSec: 0.07, volume: 0.052, waveType: "square" }
   }
 };
 
@@ -389,6 +395,7 @@ const els = {
   voiceStyle: document.getElementById("voiceStyle"),
   voiceName: document.getElementById("voiceName"),
   testVoiceBtn: document.getElementById("testVoiceBtn"),
+  testThemeSoundBtn: document.getElementById("testThemeSoundBtn"),
   soundTheme: document.getElementById("soundTheme"),
   themeMode: document.getElementById("themeMode"),
   energyMode: document.getElementById("energyMode"),
@@ -447,6 +454,7 @@ function wireEvents() {
   els.unlockBtn.addEventListener("click", unlockParentPanel);
   els.closeParentPanel.addEventListener("click", lockParentPanel);
   els.testVoiceBtn.addEventListener("click", previewVoice);
+  els.testThemeSoundBtn.addEventListener("click", previewThemeSound);
   els.generateAiIdeasBtn.addEventListener("click", generateAiIdeas);
   els.saveAiIdeasBtn.addEventListener("click", saveAiIdeas);
   els.saveSettingsBtn.addEventListener("click", saveSettingsFromUi);
@@ -1018,6 +1026,9 @@ function syncSettingsUi() {
 }
 
 function saveSettingsFromUi() {
+  const previousThemeMode = settings.themeMode;
+  const previousSoundTheme = settings.soundTheme;
+  const previousSoundMode = settings.soundMode;
   const next = {
     childName: cleanChildName(els.childNameSetting.value),
     dailyGoalStickers: Number(els.dailyGoal.value),
@@ -1076,6 +1087,13 @@ function saveSettingsFromUi() {
   saveStored(STORAGE_KEYS.settings, settings);
   syncSettingsUi();
   updateTimersUi();
+  const soundChanged = settings.themeMode !== previousThemeMode
+    || settings.soundTheme !== previousSoundTheme
+    || settings.soundMode !== previousSoundMode;
+
+  if (settings.soundMode === "on" && soundChanged && !state.running) {
+    playCue("preview", { force: true });
+  }
 
   if (!state.running) {
     renderIdle();
@@ -1102,6 +1120,13 @@ function previewVoice() {
   }
   warmSpeechVoices();
   speak("Hej, jag heter FokusKompis. Nu låter rösten lite mjukare och lugnare.", { force: true });
+}
+
+function previewThemeSound() {
+  const selectedTheme = THEME_PACKS[els.themeMode.value] ? els.themeMode.value : settings.themeMode;
+  const selectedSoundTheme = els.soundTheme.value === "theme" ? selectedTheme : els.soundTheme.value;
+  const soundKey = SOUND_PATTERNS[selectedSoundTheme] ? selectedSoundTheme : selectedTheme;
+  playCueForTheme(soundKey, "preview");
 }
 
 function generateAiIdeas() {
@@ -1356,19 +1381,74 @@ function stopAmbientTheme() {
   }
 }
 
-function playCue(kind) {
-  if (settings.soundMode !== "on") return;
-  const key = activeSoundTheme();
+function playCue(kind, options = {}) {
+  if (settings.soundMode !== "on" && !options.force) return;
+  playCueForTheme(activeSoundTheme(), kind);
+}
+
+function playCueForTheme(key, kind) {
   const theme = SOUND_PATTERNS[key] || SOUND_PATTERNS.jungle;
   const cue = theme[kind] || theme.phase;
+
+  if (theme.effect === "jungle") {
+    playJungleCue(cue, kind);
+    return;
+  }
+
+  if (theme.effect === "ocean") {
+    playOceanCue(cue, kind);
+    return;
+  }
+
+  if (theme.effect === "playland") {
+    playPlaylandCue(cue, kind);
+    return;
+  }
+
   playPattern(cue.notes, cue.durationSec, cue.gapSec, cue.volume, cue.waveType);
 }
 
-function playPattern(notes, durationSec, gapSec, volume, waveType) {
+function playJungleCue(cue, kind) {
+  if (kind !== "ambient") {
+    playDrumHit(92, 0, 0.055);
+    if (kind === "reward" || kind === "preview") playDrumHit(116, 0.16, 0.045);
+  }
+
+  playPattern(cue.notes, cue.durationSec, cue.gapSec, cue.volume, cue.waveType, kind === "ambient" ? 0 : 0.08);
+
+  if (kind === "start" || kind === "reward" || kind === "preview") {
+    playPattern([1046.5, 1318.51], 0.06, 0.08, 0.022, "sine", 0.46);
+  }
+}
+
+function playOceanCue(cue, kind) {
+  const first = cue.notes[0];
+  const last = cue.notes[cue.notes.length - 1];
+  playWaveSweep(first * 0.75, last, cue.durationSec * 1.85, cue.volume * 1.18, 0);
+
+  if (kind !== "ambient") {
+    playWaveSweep(last * 1.1, first * 0.9, cue.durationSec * 1.45, cue.volume * 0.75, 0.16);
+  }
+
+  if (kind === "reward" || kind === "preview") {
+    playPattern(cue.notes.slice(1), 0.1, 0.11, cue.volume * 0.7, "sine", 0.28);
+  }
+}
+
+function playPlaylandCue(cue, kind) {
+  playPattern(cue.notes, cue.durationSec, cue.gapSec, cue.volume, cue.waveType);
+
+  if (kind !== "ambient") {
+    const bounceNotes = cue.notes.slice(-2).map((note) => note * 1.25);
+    playPattern(bounceNotes, 0.07, 0.07, cue.volume * 0.58, "triangle", cue.notes.length * cue.gapSec + 0.04);
+  }
+}
+
+function playPattern(notes, durationSec, gapSec, volume, waveType, startDelaySec = 0) {
   const ctx = ensureAudioContext();
   if (!ctx) return;
 
-  let t = ctx.currentTime + 0.02;
+  let t = ctx.currentTime + 0.02 + startDelaySec;
   notes.forEach((frequency) => {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
@@ -1383,6 +1463,44 @@ function playPattern(notes, durationSec, gapSec, volume, waveType) {
     osc.stop(t + durationSec + 0.01);
     t += gapSec;
   });
+}
+
+function playDrumHit(frequency, startDelaySec, volume) {
+  const ctx = ensureAudioContext();
+  if (!ctx) return;
+
+  const t = ctx.currentTime + 0.02 + startDelaySec;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = "sine";
+  osc.frequency.setValueAtTime(frequency, t);
+  osc.frequency.exponentialRampToValueAtTime(Math.max(40, frequency * 0.45), t + 0.16);
+  gain.gain.setValueAtTime(0.0001, t);
+  gain.gain.exponentialRampToValueAtTime(volume, t + 0.015);
+  gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.2);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start(t);
+  osc.stop(t + 0.22);
+}
+
+function playWaveSweep(startFrequency, endFrequency, durationSec, volume, startDelaySec) {
+  const ctx = ensureAudioContext();
+  if (!ctx) return;
+
+  const t = ctx.currentTime + 0.02 + startDelaySec;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = "sine";
+  osc.frequency.setValueAtTime(startFrequency, t);
+  osc.frequency.exponentialRampToValueAtTime(Math.max(40, endFrequency), t + durationSec);
+  gain.gain.setValueAtTime(0.0001, t);
+  gain.gain.linearRampToValueAtTime(volume, t + 0.08);
+  gain.gain.exponentialRampToValueAtTime(0.0001, t + durationSec);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start(t);
+  osc.stop(t + durationSec + 0.04);
 }
 
 function ensureAudioContext() {
