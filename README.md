@@ -16,7 +16,9 @@ Föreslagna topics:
 
 Demo:
 
-När projektet är publicerat kan appen köras direkt via GitHub Pages eller genom att öppna `index.html` lokalt.
+- Repo: https://github.com/Ibrahimorfali/fokuskompis
+- Live-demo efter att GitHub Pages är aktiverat: https://ibrahimorfali.github.io/fokuskompis/
+- Appen kan också köras genom att öppna `index.html` lokalt.
 
 ## Varför jag byggde den
 
@@ -83,7 +85,7 @@ Jag lärde mig också att små detaljer spelar stor roll: knappar måste vara ty
 
 ## Nästa steg
 
-- Publicera projektet på GitHub: https://github.com/Ibrahimorfali/fokuskompis
+- Aktivera GitHub Pages för en klickbar live-demo.
 - Lägga till fler barnvänliga övningar.
 - Göra en historikvy för tidigare pass.
 - Bygga ett riktigt AI-läge där en språkmodell kan föreslå övningar utifrån tydliga säkerhetsregler och med vuxen granskning innan något sparas.
