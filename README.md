@@ -4,17 +4,7 @@ FokusKompis är en liten webapp för korta fokuspass med barn. Den samlar timer,
 
 Jag byggde projektet som ett praktiskt portfolio-projekt under min utbildning till utvecklare inom AI och maskininlärning. Målet var att bygga något som går att använda hemma: en trygg, reklamfri app som min dotter kan använda med mitt stöd när hon är rastlös eller behöver landa i ett kort fokuspass.
 
-## GitHub-presentation
-
-Kort repo-beskrivning:
-
-> Small browser app for child-friendly focus sessions, built as a student project with drawing, breaks, local progress and a rule-based exercise idea prototype.
-
-Föreslagna topics:
-
-`javascript`, `html`, `css`, `education`, `kids`, `offline-first`, `localstorage`, `canvas`, `web-audio`, `web-speech`, `ai-prototype`
-
-Demo:
+## Demo
 
 - Repo: https://github.com/Ibrahimorfali/fokuskompis
 - Live-demo efter att GitHub Pages är aktiverat: https://ibrahimorfali.github.io/fokuskompis/
