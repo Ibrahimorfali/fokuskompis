@@ -599,9 +599,9 @@ function renderIdle() {
   els.activityStage.innerHTML = [
     "<p class='prompt'>" + escapeHtml(settings.childName) + " gör passet med " + escapeHtml(theme.heroName) + " och " + escapeHtml(theme.buddyName) + ".</p>",
     "<div class='welcome-board'>",
-    "<article class='welcome-tile'><strong>" + sessionMin + " min</strong><span>kort äventyr</span></article>",
-    "<article class='welcome-tile'><strong>" + Math.round(settings.activityDurationSec / 60) + " min</strong><span>lek i taget</span></article>",
-    "<article class='welcome-tile'><strong>" + Math.round(settings.breakDurationSec) + " sek</strong><span>mjuk paus</span></article>",
+    "<article class='welcome-tile'><strong>" + sessionMin + " min</strong><span>hela passet</span></article>",
+    "<article class='welcome-tile'><strong>" + Math.round(settings.activityDurationSec / 60) + " min</strong><span>per steg</span></article>",
+    "<article class='welcome-tile'><strong>" + Math.round(settings.breakDurationSec) + " sek</strong><span>paus mellan steg</span></article>",
     "</div>"
   ].join("");
 }
@@ -886,11 +886,11 @@ function updateTimersUi() {
   }
 
   if (state.phase === "activity") {
-    els.phaseLabel.textContent = "Aktivitet: " + asClock(state.phaseRemainingSec);
+    els.phaseLabel.textContent = "Aktivitet kvar: " + asClock(state.phaseRemainingSec);
     const progress = 100 - (state.phaseRemainingSec / settings.activityDurationSec) * 100;
     els.phaseProgress.value = clamp(progress, 0, 100);
   } else {
-    els.phaseLabel.textContent = "Paus: " + asClock(state.phaseRemainingSec);
+    els.phaseLabel.textContent = "Paus kvar: " + asClock(state.phaseRemainingSec);
     const progress = 100 - (state.phaseRemainingSec / settings.breakDurationSec) * 100;
     els.phaseProgress.value = clamp(progress, 0, 100);
   }
