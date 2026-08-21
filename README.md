@@ -22,7 +22,7 @@ Demo:
 
 ## Varför jag byggde den
 
-Jag ville träna på att bygga en produkt där kod, användarflöde och trygghet hänger ihop. Målgruppen är små barn och vuxna som behöver ett lugnt verktyg för korta pass, vilket ställer krav på tydliga knappar, begränsade val, mobilanpassning, lokal lagring och ett gränssnitt som inte stressar.
+Jag ville träna på att bygga något som är användbart i vardagen, inte bara en teknisk demo. FokusKompis är i första hand tänkt för barn som behöver hjälp att komma igång, ta en paus eller byta aktivitet på ett lugnt sätt. Jag som förälder finns med i bakgrunden, till exempel för att starta ett pass, välja längd eller anpassa övningarna.
 
 Projektet passar också mitt AI/ML-spår: nästa steg är att undersöka hur AI kan hjälpa en vuxen att skapa nya barnvänliga övningar, utan konton, reklam eller onödig datainsamling.
 
