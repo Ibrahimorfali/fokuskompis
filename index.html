@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FokusKompis</title>
+  <meta name="description" content="En lugn fokusapp för barn 3-4 år med ritning, dans och lekbanor.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="top">
+      <div class="top-copy">
+        <p class="eyebrow">Offline, reklamfri, barnvänlig</p>
+        <h1>FokusKompis</h1>
+        <p class="intro">Korta fokuspass med lek, paus och belöning.</p>
+        <div class="badge-row">
+          <p id="themeBadge" class="theme-badge">Tema: Djungel</p>
+          <p id="childNameBadge" class="theme-badge">Profil: Min kompis</p>
+        </div>
+      </div>
+      <div class="top-panel">
+        <div class="safety-strip" aria-label="Trygghetsstatus">
+          <span>Offline</span>
+          <span>Ingen reklam</span>
+          <span>Inga köp</span>
+        </div>
+        <div class="hero-scene" aria-hidden="true">
+          <div class="scene-character">
+            <span class="face-eye"></span>
+            <span class="face-eye"></span>
+            <span class="face-smile"></span>
+          </div>
+          <div class="scene-steps">
+            <span>Rita</span>
+            <span>Rör på kroppen</span>
+            <span>Vila</span>
+          </div>
+          <div class="scene-track">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <button id="parentEntry" class="ghost-btn" type="button">Föräldraläge</button>
+      </div>
+    </header>
+
+    <section class="status-card" aria-label="Fokuspass">
+      <div class="status-main">
+        <div class="mission-strip" aria-hidden="true">
+          <span>1. Starta</span>
+          <span>2. Lek</span>
+          <span>3. Samla</span>
+        </div>
+        <div class="status-row">
+          <div>
+            <p class="label">Passstatus</p>
+            <p id="phaseLabel" class="phase" aria-live="polite">Tryck Starta pass</p>
+          </div>
+          <div class="timer-wrap">
+            <p class="label">Tid kvar</p>
+            <p id="sessionTimer" class="timer">10:00</p>
+          </div>
+        </div>
+
+        <div class="meter-block">
+          <label for="sessionProgress">Pass</label>
+          <progress id="sessionProgress" value="0" max="100"></progress>
+        </div>
+
+        <div class="meter-block">
+          <label for="phaseProgress">Nuvarande steg</label>
+          <progress id="phaseProgress" value="0" max="100"></progress>
+        </div>
+
+        <div class="actions">
+          <button id="startBtn" class="primary-btn" type="button">Starta pass</button>
+          <button id="stopBtn" class="danger-btn" type="button" disabled>Avsluta pass</button>
+        </div>
+      </div>
+
+      <div class="session-plan">
+        <p class="label">Dagens runda</p>
+        <ol id="sessionPlan" class="plan-list"></ol>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <article class="activity-card">
+        <div class="card-top">
+          <p class="label">Aktivitet</p>
+          <h2 id="activityTitle">Välkommen!</h2>
+        </div>
+        <div id="activityStage" class="activity-stage"></div>
+      </article>
+
+      <aside class="reward-card">
+        <div class="reward-head">
+          <div>
+          <p class="label">Belöning</p>
+          <h3>Klistermärken</h3>
+          </div>
+          <span class="reward-spark" aria-hidden="true"></span>
+        </div>
+        <div class="sticker-medal" aria-hidden="true">
+          <span id="stickerCount" class="big-number">0</span>
+        </div>
+        <div class="sticker-trail" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button id="rewardBtn" class="secondary-btn" type="button">Klar aktivitet</button>
+
+        <div class="goal-block">
+          <div class="goal-head">
+            <p class="label">Dagens mål</p>
+            <strong id="dailyGoalText">0 / 3</strong>
+          </div>
+          <progress id="dailyGoalProgress" value="0" max="100"></progress>
+        </div>
+
+        <hr>
+
+        <div class="friend-card">
+          <p class="label">Kompisar idag</p>
+          <p id="themeFriends" class="theme-friends">Leo Lejon och Maja Apa</p>
+        </div>
+
+        <hr>
+
+        <div class="stats">
+          <p><span>Pass klara:</span> <strong id="sessionsDone">0</strong></p>
+          <p><span>Fokustid:</span> <strong id="focusMinutes">0 min</strong></p>
+          <p><span>Streak:</span> <strong id="streakDays">0 dagar</strong></p>
+        </div>
+
+        <hr>
+
+        <div class="achievement-block">
+          <p class="label">Märken</p>
+          <ul id="achievementList" class="achievement-list"></ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="library-band" aria-label="Aktivitetsbank">
+      <div class="library-head">
+        <div>
+          <p class="label">Aktivitetsbank</p>
+          <h2>Övningar som växer med barnet</h2>
+        </div>
+        <p id="librarySummary" class="library-summary">Rita, dansa och lekbana är aktiva.</p>
+      </div>
+      <div id="activityLibrary" class="library-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="summaryDialog" class="summary-dialog">
+    <h2>Passet är klart</h2>
+    <p id="summaryText">Bra jobbat idag.</p>
+    <button id="closeSummary" class="primary-btn" type="button">Fortsätt lek</button>
+  </dialog>
+
+  <dialog id="parentDialog" class="parent-dialog">
+    <form method="dialog" class="parent-entry">
+      <h2>Föräldraläge</h2>
+      <p>Ange pinkod för att öppna inställningar.</p>
+      <input id="pinInput" type="password" inputmode="numeric" maxlength="4" placeholder="Pinkod">
+      <p id="pinError" class="error-msg"></p>
+      <menu>
+        <button id="cancelPinBtn" class="ghost-btn" value="cancel" type="submit">Stäng</button>
+        <button id="unlockBtn" class="primary-btn" value="default" type="button">Öppna</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <section id="parentPanel" class="parent-panel hidden" aria-hidden="true">
+    <div class="panel-head">
+      <h2>Föräldrainställningar</h2>
+      <button id="closeParentPanel" class="ghost-btn" type="button">Lås</button>
+    </div>
+
+    <div class="parent-grid">
+      <label>
+        Barnets namn
+        <input id="childNameSetting" type="text" maxlength="24" placeholder="Min kompis">
+      </label>
+
+      <label>
+        Dagens mål
+        <select id="dailyGoal">
+          <option value="2">2 klistermärken</option>
+          <option value="3" selected>3 klistermärken</option>
+          <option value="5">5 klistermärken</option>
+          <option value="8">8 klistermärken</option>
+        </select>
+      </label>
+
+      <label>
+        Rörelse
+        <select id="motionMode">
+          <option value="full" selected>Full animation</option>
+          <option value="reduced">Lugnare animation</option>
+        </select>
+      </label>
+
+      <label>
+        Aktivitetstid
+        <select id="activityDuration">
+          <option value="120">2 min</option>
+          <option value="180" selected>3 min</option>
+          <option value="240">4 min</option>
+        </select>
+      </label>
+
+      <label>
+        Paustid
+        <select id="breakDuration">
+          <option value="45">45 sek</option>
+          <option value="60" selected>1 min</option>
+          <option value="90">1.5 min</option>
+        </select>
+      </label>
+
+      <label>
+        Passlängd
+        <select id="sessionDuration">
+          <option value="600" selected>10 min</option>
+          <option value="900">15 min</option>
+          <option value="1200">20 min</option>
+        </select>
+      </label>
+
+      <label>
+        Tal och ljud
+        <select id="soundMode">
+          <option value="on" selected>På</option>
+          <option value="off">Av</option>
+        </select>
+      </label>
+
+      <label>
+        Röst
+        <select id="voiceStyle">
+          <option value="adultWarm" selected>Behaglig kvinnoröst</option>
+          <option value="adultBright">Varm pepp</option>
+          <option value="adultCalm">Lugn vuxenröst</option>
+        </select>
+      </label>
+
+      <label>
+        Röstmotor
+        <select id="voiceName">
+          <option value="auto" selected>Automatiskt bästa röst</option>
+        </select>
+      </label>
+
+      <div class="voice-test-control">
+        <span>Provlyssna</span>
+        <button id="testVoiceBtn" class="ghost-btn" type="button">Testa röst</button>
+      </div>
+
+      <label>
+        Tema
+        <select id="themeMode">
+          <option value="jungle" selected>Djungel</option>
+          <option value="ocean">Hav</option>
+          <option value="playland">Lekland</option>
+        </select>
+      </label>
+
+      <label>
+        Ljudtema
+        <select id="soundTheme">
+          <option value="theme" selected>Som tema</option>
+          <option value="jungle">Djungel</option>
+          <option value="ocean">Hav</option>
+          <option value="playland">Lekland</option>
+        </select>
+      </label>
+
+      <label>
+        Energinivå
+        <select id="energyMode">
+          <option value="calm" selected>Lugn</option>
+          <option value="medium">Medel</option>
+          <option value="high">Hög</option>
+        </select>
+      </label>
+
+      <label>
+        Pinkod
+        <input id="pinCodeSetting" type="password" inputmode="numeric" maxlength="4" placeholder="1234">
+      </label>
+    </div>
+
+    <fieldset class="activity-choices">
+      <legend>Aktiviteter</legend>
+      <label><input id="toggleDraw" type="checkbox" checked> Rita</label>
+      <label><input id="toggleDance" type="checkbox" checked> Dansa</label>
+      <label><input id="togglePlay" type="checkbox" checked> Lekbana</label>
+    </fieldset>
+
+    <section class="ai-lab" aria-label="AI-idéverkstad">
+      <div class="ai-lab-head">
+        <div>
+          <p class="label">AI-spår</p>
+          <h3>AI-idéverkstad</h3>
+        </div>
+        <span id="aiIdeaCount" class="library-count">0</span>
+      </div>
+
+      <div class="ai-grid">
+        <label>
+          Träna på
+          <select id="aiFocusArea">
+            <option value="follow">Följa instruktioner</option>
+            <option value="calm">Lugn start</option>
+            <option value="switch">Växla tempo</option>
+            <option value="create">Kreativt uttryck</option>
+          </select>
+        </label>
+
+        <label>
+          Aktivitet
+          <select id="aiActivityKind">
+            <option value="mixed">Blandat</option>
+            <option value="draw">Rita</option>
+            <option value="dance">Dansa</option>
+            <option value="play">Lekbana</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="ai-actions">
+        <button id="generateAiIdeasBtn" class="secondary-btn" type="button">Skapa förslag</button>
+        <button id="saveAiIdeasBtn" class="ghost-btn" type="button" disabled>Lägg i banken</button>
+      </div>
+
+      <ul id="aiIdeaList" class="ai-idea-list"></ul>
+      <p id="aiStatus" class="ai-status" aria-live="polite"></p>
+    </section>
+
+    <div class="panel-actions">
+      <button id="saveSettingsBtn" class="primary-btn" type="button">Spara inställningar</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
