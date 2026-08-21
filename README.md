@@ -24,7 +24,7 @@ Demo:
 
 Jag ville träna på att bygga något som är användbart i vardagen, inte bara en teknisk demo. FokusKompis är i första hand tänkt för barn som behöver hjälp att komma igång, ta en paus eller byta aktivitet på ett lugnt sätt. Jag som förälder finns med i bakgrunden, till exempel för att starta ett pass, välja längd eller anpassa övningarna.
 
-Projektet passar också mitt AI/ML-spår: nästa steg är att undersöka hur AI kan hjälpa en vuxen att skapa nya barnvänliga övningar, utan konton, reklam eller onödig datainsamling.
+Projektet passar också mitt AI/ML-spår: nästa steg är att undersöka hur AI kan hjälpa en förälder att skapa nya barnvänliga övningar, utan konton, reklam eller onödig datainsamling.
 
 ## Skärmbilder
 
@@ -81,7 +81,7 @@ Föräldraläge: PIN `1234`.
 
 Det här projektet tränade mig i att tänka mer produktnära: inte bara att skriva kod, utan att bygga ett flöde som är begripligt för en riktig användare. Jag fick arbeta med state, timing, DOM-manipulation, lokal lagring, canvas, responsiv design och testning i webbläsaren.
 
-Jag lärde mig också att små detaljer spelar stor roll: knappar måste vara tydliga, text måste få plats på mobil, pauser behöver kännas lugna och inställningar måste vara enkla för en vuxen att ändra.
+Jag lärde mig också att små detaljer spelar stor roll: första skärmen behöver kännas självklar, pausen ska vara lugn och inställningarna ska gå att ändra när man sitter bredvid barnet.
 
 ## Nästa steg
 
