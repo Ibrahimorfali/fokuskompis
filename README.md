@@ -79,13 +79,13 @@ Föräldraläge: PIN `1234`.
 
 ## Vad jag lärde mig
 
-Det här projektet tränade mig i att tänka mer produktnära: inte bara att skriva kod, utan att bygga ett flöde som är begripligt för en riktig användare. Jag fick arbeta med state, timing, DOM-manipulation, lokal lagring, canvas, responsiv design och testning i webbläsaren.
+Det här projektet gjorde mig bättre på att bygga färdigt något litet men användbart. Jag fick tänka igenom hela kedjan: starta ett pass, visa rätt aktivitet, pausa, ge en liten belöning och spara enkla inställningar lokalt i webbläsaren.
 
-Jag lärde mig också att små detaljer spelar stor roll: första skärmen behöver kännas självklar, pausen ska vara lugn och inställningarna ska gå att ändra när man sitter bredvid barnet.
+Kodmässigt fick jag träna på state i ren JavaScript, timerlogik, DOM-uppdateringar, localStorage, Canvas API, Web Audio/Web Speech och responsiv CSS. Jag märkte också att mobilvyn tog mer tid än jag först trodde, eftersom text, knappar och aktivitetsytor snabbt känns trånga när appen ska användas bredvid ett barn.
 
 ## Nästa steg
 
-- Aktivera GitHub Pages för en klickbar live-demo.
-- Lägga till fler barnvänliga övningar.
-- Göra en historikvy för tidigare pass.
-- Bygga ett riktigt AI-läge där en språkmodell kan föreslå övningar utifrån tydliga säkerhetsregler och med vuxen granskning innan något sparas.
+- Aktivera GitHub Pages så appen går att testa direkt från repot.
+- Testa appen mer hemma och justera texter, passlängd och aktiviteter efter vad som faktiskt fungerar.
+- Bygga en enkel historikvy så man kan se tidigare pass och vilka aktiviteter som används mest.
+- Göra AI-idéverkstaden mer riktig, till exempel genom att koppla den till en språkmodell i föräldraläget och låta föräldern godkänna förslag innan de sparas.
