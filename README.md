@@ -28,6 +28,7 @@ Det gör också projektet relevant för min AI/ML-utbildning. Jag har byggt appe
 - Rityta där barnet kan rita direkt i appen.
 - Rörelse- och pausaktiviteter som kan varieras.
 - Barnprofil, tema och enkla belöningar.
+- Teman för djungel, hav och lekland som ändrar scen, färger och ljud.
 - Föräldraläge med PIN, passlängd, ljud och aktivitetstyper.
 - Enkel aktivitetsbank med lokalt sparade övningar.
 - Regelbaserad idéverkstad där en förälder kan skapa nya övningsförslag.

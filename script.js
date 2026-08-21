@@ -78,6 +78,7 @@ const THEME_PACKS = {
     heroRole: "fokusledare",
     breakText: "Ta lugna djungel-andetag med Leo.",
     idleText: "Leo Lejon och Maja Apa leder passet.",
+    sceneSteps: ["Rita", "Smyg", "Vila"],
     prompts: {
       draw: [
         "Rita Leo Lejon i en djungel.",
@@ -104,11 +105,21 @@ const THEME_PACKS = {
     palette: {
       bg1: "#fff1ad",
       bg2: "#dff8d6",
+      bg3: "#e9f8c9",
       shapeA: "#ffd36b",
       shapeB: "#9be0a6",
+      accent: "#ef7e3a",
+      accent2: "#2c9f64",
+      accent3: "#2b75a8",
+      accent4: "#ffd95a",
+      line: "#b6e0c0",
+      ring: "rgba(44, 159, 100, 0.28)",
       dance1: "#fff4d8",
       dance2: "#e9fff1",
-      guideBg: "#f8ffea"
+      guideBg: "#f8ffea",
+      sceneSky: "#e5f8c7",
+      sceneFloor: "#7fca72",
+      sceneDeep: "#1f6b40"
     }
   },
   ocean: {
@@ -118,6 +129,7 @@ const THEME_PACKS = {
     heroRole: "havscoach",
     breakText: "Flyt lugnt som en liten våg.",
     idleText: "Nora Narval och Timo Sköldpadda leder passet.",
+    sceneSteps: ["Rita", "Simma", "Flyt"],
     prompts: {
       draw: [
         "Rita Nora Narval med ett stort leende.",
@@ -144,11 +156,21 @@ const THEME_PACKS = {
     palette: {
       bg1: "#dff7ff",
       bg2: "#e8fff8",
+      bg3: "#dff6ff",
       shapeA: "#8bd6ff",
       shapeB: "#8de2cf",
+      accent: "#1f9ccf",
+      accent2: "#19a68c",
+      accent3: "#3070c8",
+      accent4: "#f5d66b",
+      line: "#b9e7ee",
+      ring: "rgba(31, 156, 207, 0.28)",
       dance1: "#eaf8ff",
       dance2: "#e6fff9",
-      guideBg: "#f2fdff"
+      guideBg: "#f2fdff",
+      sceneSky: "#d9f7ff",
+      sceneFloor: "#79d8ee",
+      sceneDeep: "#176c9b"
     }
   },
   playland: {
@@ -158,6 +180,7 @@ const THEME_PACKS = {
     heroRole: "banbyggare",
     breakText: "Vila kroppen och ladda för nästa bana.",
     idleText: "Livi Lek och Max Studs leder passet.",
+    sceneSteps: ["Rita", "Studsa", "Vila"],
     prompts: {
       draw: [
         "Rita en tunnel och en rutschkana.",
@@ -184,19 +207,47 @@ const THEME_PACKS = {
     palette: {
       bg1: "#ffe1d3",
       bg2: "#eef2ff",
+      bg3: "#fff5bd",
       shapeA: "#ffb195",
       shapeB: "#cfc8ff",
+      accent: "#f46f62",
+      accent2: "#27a67f",
+      accent3: "#6a7de8",
+      accent4: "#ffd75a",
+      line: "#e0d4ff",
+      ring: "rgba(106, 125, 232, 0.28)",
       dance1: "#fff0e7",
       dance2: "#edf0ff",
-      guideBg: "#fff8f2"
+      guideBg: "#fff8f2",
+      sceneSky: "#fff0d9",
+      sceneFloor: "#cfc8ff",
+      sceneDeep: "#6a4ec9"
     }
   }
 };
 
 const SOUND_PATTERNS = {
-  jungle: [329.63, 392.0, 523.25],
-  ocean: [261.63, 329.63, 392.0],
-  playland: [392.0, 523.25, 659.25]
+  jungle: {
+    start: { notes: [329.63, 392.0, 523.25], durationSec: 0.18, gapSec: 0.13, volume: 0.024, waveType: "triangle" },
+    phase: { notes: [392.0, 523.25], durationSec: 0.14, gapSec: 0.11, volume: 0.023, waveType: "triangle" },
+    break: { notes: [392.0, 329.63], durationSec: 0.22, gapSec: 0.2, volume: 0.018, waveType: "sine" },
+    reward: { notes: [329.63, 392.0, 523.25, 659.25], durationSec: 0.16, gapSec: 0.1, volume: 0.032, waveType: "triangle" },
+    ambient: { notes: [329.63, 523.25], durationSec: 0.22, gapSec: 0.46, volume: 0.012, waveType: "sine" }
+  },
+  ocean: {
+    start: { notes: [261.63, 329.63, 392.0], durationSec: 0.24, gapSec: 0.18, volume: 0.02, waveType: "sine" },
+    phase: { notes: [329.63, 392.0], durationSec: 0.2, gapSec: 0.17, volume: 0.018, waveType: "sine" },
+    break: { notes: [392.0, 329.63, 261.63], durationSec: 0.24, gapSec: 0.2, volume: 0.016, waveType: "sine" },
+    reward: { notes: [261.63, 329.63, 392.0, 523.25], durationSec: 0.2, gapSec: 0.14, volume: 0.026, waveType: "sine" },
+    ambient: { notes: [261.63, 392.0], durationSec: 0.28, gapSec: 0.52, volume: 0.01, waveType: "sine" }
+  },
+  playland: {
+    start: { notes: [392.0, 523.25, 659.25], durationSec: 0.15, gapSec: 0.09, volume: 0.026, waveType: "square" },
+    phase: { notes: [523.25, 659.25], durationSec: 0.13, gapSec: 0.09, volume: 0.024, waveType: "triangle" },
+    break: { notes: [523.25, 392.0], durationSec: 0.18, gapSec: 0.15, volume: 0.018, waveType: "sine" },
+    reward: { notes: [523.25, 659.25, 783.99, 1046.5], durationSec: 0.13, gapSec: 0.08, volume: 0.03, waveType: "triangle" },
+    ambient: { notes: [392.0, 659.25], durationSec: 0.18, gapSec: 0.4, volume: 0.011, waveType: "triangle" }
+  }
 };
 
 const VOICE_STYLES = {
@@ -354,7 +405,8 @@ const els = {
   aiIdeaCount: document.getElementById("aiIdeaCount"),
   saveSettingsBtn: document.getElementById("saveSettingsBtn"),
   themeBadge: document.getElementById("themeBadge"),
-  themeFriends: document.getElementById("themeFriends")
+  themeFriends: document.getElementById("themeFriends"),
+  sceneSteps: document.querySelectorAll(".scene-steps span")
 };
 
 let settings = loadStored(STORAGE_KEYS.settings, DEFAULT_SETTINGS);
@@ -590,6 +642,9 @@ function renderThemeMeta() {
   els.themeBadge.textContent = "Tema: " + theme.label;
   els.childNameBadge.textContent = "Profil: " + settings.childName;
   els.themeFriends.textContent = theme.heroName + " och " + theme.buddyName;
+  (theme.sceneSteps || []).forEach((label, index) => {
+    if (els.sceneSteps[index]) els.sceneSteps[index].textContent = label;
+  });
 }
 
 function renderSessionPlan() {
@@ -1249,13 +1304,31 @@ function applyMotionMode(mode) {
 function applyThemeMode(mode) {
   const root = document.documentElement;
   const theme = THEME_PACKS[mode] || THEME_PACKS.jungle;
-  root.style.setProperty("--bg-1", theme.palette.bg1);
-  root.style.setProperty("--bg-2", theme.palette.bg2);
-  root.style.setProperty("--shape-a", theme.palette.shapeA);
-  root.style.setProperty("--shape-b", theme.palette.shapeB);
-  root.style.setProperty("--dance-1", theme.palette.dance1);
-  root.style.setProperty("--dance-2", theme.palette.dance2);
-  root.style.setProperty("--guide-bg", theme.palette.guideBg);
+  const themeKey = THEME_PACKS[mode] ? mode : "jungle";
+  const cssVars = {
+    bg1: "--bg-1",
+    bg2: "--bg-2",
+    bg3: "--bg-3",
+    shapeA: "--shape-a",
+    shapeB: "--shape-b",
+    accent: "--accent",
+    accent2: "--accent-2",
+    accent3: "--accent-3",
+    accent4: "--accent-4",
+    line: "--line",
+    ring: "--ring",
+    dance1: "--dance-1",
+    dance2: "--dance-2",
+    guideBg: "--guide-bg",
+    sceneSky: "--scene-sky",
+    sceneFloor: "--scene-floor",
+    sceneDeep: "--scene-deep"
+  };
+
+  root.dataset.theme = themeKey;
+  Object.entries(cssVars).forEach(([key, cssVar]) => {
+    if (theme.palette[key]) root.style.setProperty(cssVar, theme.palette[key]);
+  });
 }
 
 function getTheme() {
@@ -1286,29 +1359,9 @@ function stopAmbientTheme() {
 function playCue(kind) {
   if (settings.soundMode !== "on") return;
   const key = activeSoundTheme();
-  const notes = SOUND_PATTERNS[key] || SOUND_PATTERNS.jungle;
-
-  if (kind === "reward") {
-    playPattern([notes[0], notes[1], notes[2], notes[2] * 1.18], 0.17, 0.12, 0.032, "triangle");
-    return;
-  }
-
-  if (kind === "break") {
-    playPattern([notes[0] * 0.75, notes[1] * 0.75], 0.2, 0.18, 0.018, "sine");
-    return;
-  }
-
-  if (kind === "start") {
-    playPattern([notes[0], notes[1], notes[2]], 0.18, 0.14, 0.024, "triangle");
-    return;
-  }
-
-  if (kind === "ambient") {
-    playPattern([notes[0], notes[2]], 0.22, 0.46, 0.012, "sine");
-    return;
-  }
-
-  playPattern([notes[1], notes[2]], 0.14, 0.12, 0.022, "triangle");
+  const theme = SOUND_PATTERNS[key] || SOUND_PATTERNS.jungle;
+  const cue = theme[kind] || theme.phase;
+  playPattern(cue.notes, cue.durationSec, cue.gapSec, cue.volume, cue.waveType);
 }
 
 function playPattern(notes, durationSec, gapSec, volume, waveType) {
